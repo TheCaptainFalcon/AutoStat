@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 
 class Credits extends Component {
     constructor(props) {
@@ -6,17 +7,18 @@ class Credits extends Component {
         this.state = {  }
     }
     render() { 
-        const creditsAmt1 = this.props.credits1;
-        const creditsAmt2 = this.props.credits2;
+        let creditsAmt1 = _.toNumber(this.props.credits1);
+        let creditsAmt2 = _.toNumber(this.props.credits2);
+        let creditsAmt3 = creditsAmt1 + creditsAmt2
 
         return (  
             <div>
+                
                 <div>
-                    API Key 1: {''} {creditsAmt1} {''} Credits Remaining
+                    {creditsAmt3} {''} Credits Remaining
+                    
                 </div>
-                <div>
-                    API Key 2: {''} {creditsAmt2} {''} Credits Remaining
-                </div>
+
             </div>
         );
     }
